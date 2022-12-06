@@ -12,5 +12,4 @@ int c = int.Parse(Console.ReadLine()!);
 int max = a;
 if (b > a) max = b; 
 if (c > max) max = c;
-Console.Write ("max -> ");
-Console.WriteLine (max);
+Console.Write ("max -> " + max);
