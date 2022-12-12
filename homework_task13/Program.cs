@@ -5,7 +5,7 @@
 // 32679 -> 6
 
 Console.WriteLine("Введите число: ");
-int number = int.Parse (Console.ReadLine());
+int number = int.Parse (Console.ReadLine()!);
 if (number < 100)
 Console.WriteLine("Третьей цифры нет");
 else

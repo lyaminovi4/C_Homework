@@ -5,13 +5,13 @@
 // 918 -> 1
 
 Console.WriteLine("Введите трёхзначное число: ");
-int number = int.Parse (Console.ReadLine());
+int number = int.Parse (Console.ReadLine()!);
 if(number > 1000 || number < 100);
 {
 while(number >= 1000 || number < 100)
     {
     Console.Write("Введенное число не трёхзначное: ");
-    number = int.Parse (Console.ReadLine());
+    number = int.Parse (Console.ReadLine()!);
     }
 }
 int number1 = number/100;
