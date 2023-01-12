@@ -34,31 +34,33 @@ void PrintArray (int[,] inArray)
 
 double[] ColumnSum(int[,] matrix)
 {
-    int height = matrix.GetLength(0);
-    int length = matrix.GetLength(1);
-    double[] result = new double[length];
+    // int height = matrix.GetLength(0);
+    // int length = matrix.GetLength(1);
+    double[] result = new double[matrix.GetLength(1)];
 
-    for (int i = 0; i < height; i++)
+    for (int j = 0; j < matrix.GetLength(1); j++)
     {
-        for (int j = 0; j < length; j++)
+        double sum = 0;
+        for (int i = 0; i< matrix.GetLength(0); i++)
         {
-            result[j] += matrix[i, j];
+            sum += matrix[i, j];
         }
+        result[j] = Math.Round(sum/ matrix.GetLength(0), 2);
     }
     return result;
 }
 
-void PrintResult(double[] inArray, int[,] matrix)
-{
-    int length = matrix.GetLength(0);
+// void PrintResult(double[] inArray, int[,] matrix)
+// {
+//     int length = matrix.GetLength(0);
 
-    for (int i = 0; i < length; i++)
-    {
-        Console.Write("{0:0.0} ", inArray[i] / length);
-    }
-}
+//     for (int i = 0; i < length; i++)
+//     {
+//         Console.Write("{0:0.0} ", inArray[i] / length);
+//     }
+// }
 
-int[,] matrix = GetArray(3, 3);
+int[,] matrix = GetArray(3, 4);
 PrintArray(matrix);
 double[] result = ColumnSum(matrix);
-PrintResult(result, matrix);
+Console.WriteLine(String.Join("; ", result));
